@@ -1,12 +1,13 @@
 {
   "version":2,
+  "name":"bloglive",
   "builds":[
-    {"src": "*.js", "use":"@vercel/node" }
+    {"src": "app.js", "use":"@vercel/node" }
   ],
   "routes":[
     {
       "src": "/(.*)" ,
-      "dest": "/"
+      "dest": "/app.js"
     }
   ]
   }
