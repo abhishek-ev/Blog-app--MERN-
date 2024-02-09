@@ -15,7 +15,7 @@ const path=require('path')
 // database connet
 const connetDB=async()=>{
     try{
-        await mongoose.connect(process.env.MONGO_URL)
+        await mongoose.connect("mongodb+srv://abhishekev007:abhishekev@cluster0.7jbzakt.mongodb.net/blog?retryWrites=true&w=majority")
         console.log("data base connected succesfully")
     }
     catch(err){
@@ -51,7 +51,7 @@ app.post("/api/upload",upload.single("file"),(req,res)=>{
     res.status(200).json("Image has been uploaded successfully!")
 })
 
-app.listen(process.env.PORT,()=>{
+app.listen(5000,()=>{
     connetDB()
-    console.log("app is on port"+process.env.PORT)
+    console.log("app is on port 5000")
 })
